@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Comet WM&S</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/testify.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Comet WM&S Dashboard</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+        <button id="darkModeToggle">🌙</button>
+    </header>
+    
+    <main>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#analytics">📊 Analytics</a></li>
+                <li><a href="#notifications">🔔 Notifications</a></li>
+                <li><a href="#user-stats">👤 User Stats</a></li>
+                <li><a href="#settings">⚙️ Settings</a></li>
+            </ul>
+        </aside>
+        
+        <section class="content">
+            <h2 id="analytics">📊 Dashboard Analytics</h2>
+            <canvas id="dashboardChart"></canvas>
+            
+            <h2 id="notifications">🔔 Recent Notifications</h2>
+            <div id="notificationArea"></div>
+            
+            <h2 id="user-stats">👤 User Statistics</h2>
+            <p>Live data updates coming soon!</p>
+            
+            <h2 id="settings">⚙️ Settings</h2>
+            <p>Customize your dashboard experience.</p>
+        </section>
+    </main>
+    
+    <script>
+        // Dark Mode Toggle
+        document.getElementById("darkModeToggle").addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+        });
+
+        // Chart.js Example
+        var ctx = document.getElementById('dashboardChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                datasets: [{
+                    label: 'User Engagement',
+                    data: [12, 19, 3, 5, 2],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            }
+        });
+
+        // Testify.js for Notifications
+        document.getElementById("notificationArea").innerHTML = "<p>New messages will appear here...</p>";
+    </script>
+</body>
+</html>
+
